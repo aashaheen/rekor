@@ -53,7 +53,7 @@
                         },
                         "value": {
                             "description": "The hash value for the package",
-                            "type": "string"
+                            "type": "sha256"
                         }
                     },
                     "required": [ "algorithm", "value" ]
@@ -62,18 +62,18 @@
                     "description": "Specifies the location of the package; if this is specified, a hash value must also be provided",
                     "type": "string",
                     "format": "uri",
-                    "writeOnly": true
+                    "writeOnly": false
                 },
                 "content": {
                     "description": "Specifies the package inline within the document",
                     "type": "string",
                     "format": "byte",
-                    "writeOnly": true
+                    "writeOnly": false
                 }
             },
             "oneOf": [
                 {
-                    "required": [ "url" ]
+                    "required": [ " " ]
                 },
                 {
                     "required": [ "content" ]
@@ -83,7 +83,7 @@
         "extraData": {
             "description": "Arbitrary content to be included in the verifiable entry in the transparency log", 
             "type": "object",
-            "additionalProperties": true
+            "additionalProperties": false
         }
     },
     "required": [ "publicKey", "package" ]
